@@ -75,6 +75,32 @@ body::-webkit-scrollbar {
     border: 0.4em solid #d84b4f;
 }
 
+.judge-score-group {
+    margin: 10px 0 10px 0;
+    background-color: #000;
+}
+
+.judge-score-group [type="radio"] {
+    display: none;
+}
+
+.judge-score-group [type="radio"]+label {
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 90px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 5px 0 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.judge-score-group [type="radio"]:checked+label {
+    background-color: #d84b4f;
+}
+
 #judge-score-wrapper {
     width: 80%;
     margin: 40px auto;
