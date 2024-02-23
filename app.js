@@ -14,43 +14,26 @@ const defaultParticipantScores = {}; // For default scores
 
 const PORT = 5000;
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
+
+app.get('/judges', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'judges.html'));
+});
+
+app.get('/scoreboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'scoreboard.html'));
+});
+
 app.use(express.static(path.join(__dirname, "src")))
 
 app.use(express.json());
 
-// API endpoint for score submissions
-app.post('/submit-score', (req, res) => {
-    const { participantName, judge1, judge2, judge3 } = req.body;
-
-    const totalScore = judge1 + judge2 + judge3;
-
-    if (participantScores[participantName]) {
-        // Participant exists, update their scores
-        participantScores[participantName].judge1 = judge1;
-        participantScores[participantName].judge2 = judge2;
-        participantScores[participantName].judge3 = judge3;
-        participantScores[participantName].totalScore = totalScore;
-    } else {
-        // Participant doesn't exist, create a new entry
-        participantScores[participantName] = {
-            judge1,
-            judge2,
-            judge3,
-            totalScore,
-        };
-    }
-
-    // Send the updated highscore table to all connected clients
-    io.emit('highscoreUpdated', getHighscoreTable());
-
-    // Send a success response
-    res.status(200).json({ message: 'Score submitted successfully' });
-});
-
 // Event handler for the 'updateScore' event
 io.on('connection', (socket) => {
     console.log('A user connected');
-    
+
     socket.on('updateScore', (data) => {
         const { participantName, judge1, judge2, judge3 } = data;
 

@@ -1,9 +1,8 @@
-"use strict"
+"use strict";
 
 // main.js
 
 const socket = io();
-
 
 // Function to update the highscore table in the DOM
 function updateHighscoreTable(highscoreTable) {
@@ -26,43 +25,6 @@ function updateHighscoreTable(highscoreTable) {
         // Apply the "fade-in" class to the row for animation
         row.classList.add('fade-in');
     });
-}
-
-// Add event listeners for each judge's score form
-document.getElementById('scoreForm1').addEventListener('submit', (e) => {
-    e.preventDefault();
-    submitJudgeScore(1);
-});
-
-document.getElementById('scoreForm2').addEventListener('submit', (e) => {
-    e.preventDefault();
-    submitJudgeScore(2);
-});
-
-document.getElementById('scoreForm3').addEventListener('submit', (e) => {
-    e.preventDefault();
-    submitJudgeScore(3);
-});
-
-// Function to submit a judge's score
-function submitJudgeScore(judgeNumber) {
-    const selectedparticipant = document.querySelector('input[name="participantName"]:checked');
-    
-    if (!selectedparticipant) {
-        alert('참가자가 선택되지 않았습니다 :(');
-        return;
-    }
-
-    const participantName = selectedparticipant.value;
-    const judgeScore = parseInt(document.getElementById('judge' + judgeNumber).value);
-
-    // Send the participant name and score to the server
-    socket.emit('updateScore', { participantName, ['judge' + judgeNumber]: judgeScore });
-    
-    // Clear the input field
-    document.getElementById('judge' + judgeNumber).value = '';
-
-    alert('제출되었습니다 :)')
 }
 
 // Handle real-time updates of the highscore table

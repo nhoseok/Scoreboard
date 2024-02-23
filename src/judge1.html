@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On the RECORD:Vol.2 예선</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/submitScore.js"></script>
+</head>
+
+<body>
+    <a href="index.html">HOME</a>
+    <br>
+    <div id="parti-choice-title">참가번호</div>
+    <div id="parti-choice">
+        <label for="participantName"></label>
+
+        <div class="parti-item-group">
+            <label class="parti-item"><input type="radio" name="participantName" value="A1" required>A1</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A2">A2</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A3">A3</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A4">A4</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A5">A5</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A6">A6</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A7">A7</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="A8">A8</label>
+        </div>
+
+        <div class="parti-item-group">
+            <label class="parti-item"><input type="radio" name="participantName" value="B1">B1</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B2">B2</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B3">B3</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B4">B4</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B5">B5</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B6">B6</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B7">B7</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="B8">B8</label>
+        </div>
+
+        <div class="parti-item-group">
+            <label class="parti-item"><input type="radio" name="participantName" value="C1">C1</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C2">C2</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C3">C3</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C4">C4</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C5">C5</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C6">C6</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C7">C7</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="C8">C8</label>
+        </div>
+
+        <div class="parti-item-group">
+            <label class="parti-item"><input type="radio" name="participantName" value="D1">D1</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D2">D2</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D3">D3</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D4">D4</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D5">D5</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D6">D6</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D7">D7</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="D8">D8</label>
+        </div>
+
+        <div class="parti-item-group">
+            <label class="parti-item"><input type="radio" name="participantName" value="E1">E1</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E2">E2</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E3">E3</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E4">E4</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E5">E5</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E6">E6</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E7">E7</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="E8">E8</label>
+        </div>
+
+        <div class="parti-item-group">
+            <label class="parti-item"><input type="radio" name="participantName" value="F1">F1</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F2">F2</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F3">F3</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F4">F4</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F5">F5</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F6">F6</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F7">F7</label>
+            <label class="parti-item"><input type="radio" name="participantName" value="F8">F8</label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="judge-score-wrapper">
+        <!-- Judge 1 Score Form -->
+        <div class="judge-wrapper">
+            <form id="scoreForm1">
+                <div class="judge-name">WOOTAE</div>
+                <div id="judge-one-score">
+                    <label for="judge1"></label>
+                    <div class="judge1-score-group">
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="1" required>1</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="2">2</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="3">3</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="4">4</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="5">5</label>
+                    </div>
+                    
+                    <div class="judge1-score-group">
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="6">6</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="7">7</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="8">8</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="9">9</label>
+                        <label class="judge1-score"><input type="radio" name="judge1Score" value="10">10</label>
+                    </div>
+                </div>
+                <button type="submit" class="judge-submit-button">입력</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById('scoreForm1').addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitJudgeScore(1);
+        });
+    </script>
+
+    <div id="score-input-bottom">
+        <img src="img/freezelogo.png" alt="freezelogo" class="freeze-logo">
+    </div>
+
+    <div id="battle-title">
+        <img src="img/ontherecordlogo.png" alt="ontherecordlogo" class="ontherecord-logo">
+    </div>
+
+
+</body>
+
+</html>
