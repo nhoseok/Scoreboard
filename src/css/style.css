@@ -52,8 +52,8 @@ body::-webkit-scrollbar {
 }
 
 #judge-top {
-    margin: 0 auto;
-    width: 40%;
+    margin: 30px auto;
+    width: 30%;
 }
 
 #parti-choice-title {
@@ -63,7 +63,7 @@ body::-webkit-scrollbar {
 }
 
 #parti-choice {
-    width: 95%; /* Needs to be changed to fit iPad UI */ 
+    width: 70%; /* Needs to be changed to fit iPad UI */ 
     background-color: #c9c9c9;
     margin: 0 auto;
     justify-content: space-around;
@@ -78,7 +78,7 @@ body::-webkit-scrollbar {
 }
 
 .parti-item {
-    width: 30px;
+    width: 50px;
     display: inline-block;
     margin: 0 3px 0 3px;
     background: #c9c9c9;
@@ -118,10 +118,10 @@ body::-webkit-scrollbar {
 .judge-score-group [type="radio"]+label {
     display: inline-block;
     cursor: pointer;
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 80px;
     border: 1px solid #333;
-    line-height: 30px;
+    line-height: 40px;
     text-align: center;
     font-size: 16px;
     margin: auto;
@@ -143,12 +143,12 @@ body::-webkit-scrollbar {
 }
 
 .judge-name {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 .judge-submit-button {
-    margin-top: 10px;
+    margin-top: 30px;
     font-size: 16px;
     width: 110px;
     height: 30px;
@@ -171,7 +171,7 @@ body::-webkit-scrollbar {
 }
 
 #judge-bottom {
-    width: 30%;
+    width: 20%;
     margin: 80px auto 10px auto;
 }
 
