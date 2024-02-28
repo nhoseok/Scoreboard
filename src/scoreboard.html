@@ -5,13 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On the RECORD:Vol.2 예선</title>
+    <title>RISE AGAINST 예선</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <a href="index.html">HOME</a>
-    <br>
+    <div id="scoreboard-top">
+        <a href="index.html"><img src="img/RISE AGAINST logo.png" alt="riseagainstlogo" class="riseagainst-logo"></a>
+    </div>
 
     <div id="highscoreTable-wrapper">
         <table id="highscoreTable">
@@ -19,11 +20,8 @@
         </table>
     </div>
 
-    <div id="bottom-left">
+    <div id="scoreboard-bottom">
         <img src="img/freezelogo.png" alt="freezelogo" class="freeze-logo">
-    </div>
-    <div id="bottom-right">
-        <img src="img/dauspicelogo.png" alt="dauspicelogo" class="dauspice-logo">
     </div>
 
     <script src="/socket.io/socket.io.js"></script>

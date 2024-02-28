@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On the RECORD:Vol.2 예선</title>
+    <title>BATTLE NAME 예선</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/submitScore.js"></script>
 </head>
 
 <body>
-    <a href="index.html">HOME</a>
-    <br>
+    <div id="judge-top">
+        <a href="index.html"><img src="img/RISE AGAINST logo.png" alt="riseagainstlogo" class="riseagainst-logo"></a>
+    </div>
     <div id="parti-choice-title">참가번호</div>
     <div id="parti-choice">
         <label for="participantName"></label>
@@ -89,7 +90,7 @@
         <!-- Judge 3 Score Form -->
         <div class="judge-wrapper">
             <form id="scoreForm3">
-                <div class="judge-name">STAGGER</div>
+                <div class="judge-name">DEFAULT</div>
                 <div id="judge-three-score">
                     <label for="judge3"></label>
                     <div class="judge-score-group">
@@ -120,12 +121,8 @@
         });
     </script>
 
-    <div id="score-input-bottom">
+    <div id="judge-bottom">
         <img src="img/freezelogo.png" alt="freezelogo" class="freeze-logo">
-    </div>
-
-    <div id="battle-title">
-        <img src="img/ontherecordlogo.png" alt="ontherecordlogo" class="ontherecord-logo">
     </div>
 </body>
 
